@@ -23,6 +23,9 @@ cp apps/web/.env.example apps/web/.env
 
 # Install dependencies
 bun install --frozen-lockfile
+
+# Install the Chromium browser (and its system dependencies) of Playwright, used by the `apps/web` tests
+bunx playwright install --with-deps chromium
 ```
 
 ### Start the application
