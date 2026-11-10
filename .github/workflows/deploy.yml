@@ -1,0 +1,42 @@
+name: "deploy"
+
+on:
+  push:
+    tags: ["v*"]
+
+env:
+  REGISTRY: "ghcr.io"
+
+jobs:
+  deploy:
+    timeout-minutes: 10
+    runs-on: "ubuntu-latest"
+    permissions:
+      contents: "read"
+      packages: "write"
+    steps:
+      - uses: "actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1" # v7.0.1
+
+      - name: "Login to the registry"
+        env:
+          REGISTRY_USERNAME: ${{ github.actor }}
+          REGISTRY_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: 'echo "$REGISTRY_TOKEN" | docker login "$REGISTRY" --username "$REGISTRY_USERNAME" --password-stdin'
+
+      - name: "Re-tag the commit image as the version and the channel"
+        shell: "bash"
+        run: |
+          IMAGE_NAMESPACE="${REGISTRY}/${GITHUB_REPOSITORY_OWNER,,}"
+          VERSION="${GITHUB_REF_NAME#v}"
+          case "$VERSION" in
+            *-*) CHANNEL="beta" ;;
+            *) CHANNEL="latest" ;;
+          esac
+          SOURCE_TAG="sha-$(git rev-parse HEAD)"
+
+          for APPLICATION in web api; do
+            docker buildx imagetools create \
+              --tag "${IMAGE_NAMESPACE}/cnam-erp-${APPLICATION}:${VERSION}" \
+              --tag "${IMAGE_NAMESPACE}/cnam-erp-${APPLICATION}:${CHANNEL}" \
+              "${IMAGE_NAMESPACE}/cnam-erp-${APPLICATION}:${SOURCE_TAG}"
+          done

@@ -1,0 +1,40 @@
+{
+  "$schema": "./node_modules/turbo/schema.json",
+  "noUpdateNotifier": true,
+  "agentGuidance": false,
+  "ui": "tui",
+  "tasks": {
+    "build": {
+      "cache": false
+    },
+    "test": {
+      "cache": false
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "start": {
+      "cache": false,
+      "dependsOn": ["build"],
+      "persistent": true
+    },
+    "database:migrate:make": {
+      "cache": false
+    },
+    "database:migrate": {
+      "cache": false
+    },
+    "database:migrate:down": {
+      "cache": false
+    },
+    "database:codegen": {
+      "dependsOn": ["database:migrate"],
+      "cache": false
+    },
+    "database:seed": {
+      "dependsOn": ["database:codegen"],
+      "cache": false
+    }
+  }
+}

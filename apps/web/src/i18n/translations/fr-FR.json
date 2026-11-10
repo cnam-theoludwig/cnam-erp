@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "description": "{name}, l'ERP de gestion des associations étudiantes."
+  },
+  "loading": "Chargement...",
+  "actions": {
+    "back": "Retour",
+    "signIn": "Se connecter",
+    "signOut": "Se déconnecter"
+  },
+  "errors": {
+    "invalid": "Vérifiez ce champ.",
+    "minLength": "{fieldName} doit contenir au moins {minimum, number} caractères.",
+    "maxLength": "{fieldName} doit contenir au maximum {maximum, number} caractères.",
+    "required": "{fieldName} est obligatoire.",
+    "email": "E-mail invalide.",
+    "pageNotFound": "Page introuvable",
+    "pageDoesntExist": "Cette page n'existe pas !",
+    "returnToHomePage": "Retour à la page d'accueil",
+    "serverError": "Erreur du serveur",
+    "tryAgain": "Réessayer",
+    "requestError": "Une erreur s'est produite, veuillez réessayer plus tard."
+  },
+  "i18n": {
+    "language": "Langue"
+  },
+  "Duration": {
+    "millisecond": "{amount, plural, one {# milliseconde} other {# millisecondes}}",
+    "second": "{amount, plural, one {# seconde} other {# secondes}}",
+    "minute": "{amount, plural, one {# minute} other {# minutes}}",
+    "hour": "{amount, plural, one {# heure} other {# heures}}",
+    "day": "{amount, plural, one {# jour} other {# jours}}",
+    "week": "{amount, plural, one {# semaine} other {# semaines}}",
+    "month": "{amount, plural, one {# mois} other {# mois}}",
+    "year": "{amount, plural, one {# an} other {# ans}}"
+  },
+  "User": {
+    "greeting": "Bonjour, {displayName}",
+    "email": {
+      "label": "E-mail",
+      "placeholder": "Votre adresse e-mail"
+    },
+    "password": {
+      "label": "Mot de passe",
+      "placeholder": "Mot de passe",
+      "show": "Afficher le mot de passe",
+      "hide": "Masquer le mot de passe"
+    },
+    "signIn": {
+      "forgotPassword": "Mot de passe oublié ?",
+      "submit": "Se connecter",
+      "errorInvalidCredentials": "E-mail ou mot de passe invalide."
+    },
+    "passwordForgot": {
+      "title": "Mot de passe oublié ?",
+      "subtitle": "Saisissez votre e-mail pour recevoir un lien de réinitialisation.",
+      "submit": "Envoyer le lien de réinitialisation",
+      "success": "Si un compte existe pour cet e-mail, un lien de réinitialisation a été envoyé.",
+      "backToSignIn": "Retour à la connexion"
+    },
+    "passwordReset": {
+      "title": "Réinitialisez votre mot de passe",
+      "subtitle": "Choisissez un nouveau mot de passe.",
+      "submit": "Réinitialiser le mot de passe",
+      "success": "Mot de passe réinitialisé. Vous pouvez maintenant vous connecter."
+    }
+  },
+  "emails": {
+    "AuthEmailVerify": {
+      "title": "Vérifiez votre adresse e-mail",
+      "description": "Vous avez demandé à modifier votre adresse e-mail pour <email></email>. Veuillez cliquer sur le bouton ci-dessous pour confirmer ce changement.",
+      "button": "Vérifier l'e-mail",
+      "expiration": "Pour des raisons de sécurité, ce lien n'est valable que jusqu'au {date, date, medium} à {date, time, short}. Passé ce délai, vous devrez effectuer une nouvelle demande.",
+      "fallback": "Si le bouton ci-dessus ne fonctionne pas, vous pouvez copier et coller cette URL dans votre navigateur :"
+    },
+    "AuthPasswordReset": {
+      "subject": "Réinitialisez votre mot de passe",
+      "title": "Demande de réinitialisation du mot de passe",
+      "description": "Bonjour <name></name>, cliquez sur le bouton ci-dessous pour choisir un nouveau mot de passe.",
+      "button": "Réinitialiser mon mot de passe",
+      "fallback": "Si le bouton ci-dessus ne fonctionne pas, vous pouvez copier et coller cette URL dans votre navigateur :",
+      "expiration": "Ce lien de réinitialisation est valable {duration}.",
+      "footer": "Si vous avez reçu ce message par erreur, veuillez le supprimer. Votre mot de passe ne sera pas réinitialisé si vous ne cliquez pas sur le lien ci-dessus."
+    },
+    "AuthEmailUpdateWarning": {
+      "title": "Alerte de sécurité : changement d'e-mail",
+      "description": "L'adresse e-mail de votre compte est en cours de modification, de <emailOld></emailOld> vers <emailPending></emailPending>.",
+      "warning": "Si vous n'êtes pas à l'origine de cette demande, sécurisez immédiatement votre compte.",
+      "button": "Accéder à mon compte"
+    }
+  }
+}

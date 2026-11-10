@@ -1,0 +1,8 @@
+telemetry = false
+
+[run]
+bun = true
+silent = true
+
+[test]
+onlyFailures = true

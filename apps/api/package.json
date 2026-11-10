@@ -1,0 +1,43 @@
+{
+  "name": "@repo/api",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/routes/contract.ts"
+  },
+  "scripts": {
+    "start": "bun ./src/server.ts",
+    "dev": "bun --watch --no-clear-screen ./src/server.ts",
+    "test": "bun ./src/_test/global-setup.ts",
+    "generate-secret": "bun ./src/scripts/generate-secret.ts",
+    "password-hash": "bun ./src/scripts/password-hash.ts",
+    "database:migrate:make": "bun ./src/tools/database/commands/migrateMake.ts",
+    "database:migrate": "bun ./src/tools/database/commands/migrateToLatest.ts",
+    "database:migrate:down": "bun ./src/tools/database/commands/migrateDown.ts",
+    "database:codegen": "bun ./src/tools/database/commands/typegen.ts && bun fmt ./src/tools/database/codegen.ts && bun lint --fix ./src/tools/database/codegen.ts",
+    "database:seed": "bun ./src/tools/database/seed/_seed.ts"
+  },
+  "dependencies": {
+    "@adonisjs/health": "catalog:",
+    "@boringnode/queue": "catalog:",
+    "@orpc/contract": "catalog:",
+    "@orpc/openapi": "catalog:",
+    "@orpc/server": "catalog:",
+    "@orpc/zod": "catalog:",
+    "@repo/models": "workspace:*",
+    "@repo/utils": "workspace:*",
+    "ioredis": "catalog:",
+    "jose": "catalog:",
+    "ky": "catalog:",
+    "kysely": "catalog:",
+    "kysely-typegen": "catalog:",
+    "nodemailer": "catalog:",
+    "ua-parser-js": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@testcontainers/postgresql": "catalog:",
+    "@testcontainers/redis": "catalog:",
+    "testcontainers": "catalog:"
+  }
+}

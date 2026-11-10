@@ -1,0 +1,19 @@
+{
+  "name": "@repo/models",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./AuthUser": "./src/AuthUser.ts",
+    "./Email": "./src/Email.ts",
+    "./Entity": "./src/Entity.ts",
+    "./I18n": "./src/I18n.ts",
+    "./mock/*": "./src/mock/*.ts"
+  },
+  "scripts": {
+    "test": "bun test --env-file=../../.env"
+  },
+  "dependencies": {
+    "@repo/utils": "workspace:*",
+    "zod": "catalog:"
+  }
+}

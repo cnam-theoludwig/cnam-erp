@@ -1,0 +1,584 @@
+{
+  "$schema": "https://unpkg.com/oxlint@1.87.0/configuration_schema.json",
+  "ignorePatterns": ["**/routeTree.gen.ts"],
+  "options": {
+    "typeAware": true,
+    "typeCheck": true,
+    "denyWarnings": true,
+    "reportUnusedDisableDirectives": "error"
+  },
+  "env": {
+    "builtin": true,
+    "browser": true,
+    "node": true
+  },
+  "jsPlugins": ["./lint/plugin.ts"],
+  "plugins": [
+    "eslint",
+    "typescript",
+    "react",
+    "jsx-a11y",
+    "import",
+    "unicorn",
+    "promise",
+    "node",
+    "oxc",
+    "jest"
+  ],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error",
+    "pedantic": "error",
+    "perf": "error"
+  },
+  "rules": {
+    "repo/entity-id-reference": "error",
+    "repo/form-no-validate": "error",
+    "repo/mutation-async-handler": "error",
+    "repo/no-boolean-use-state": "error",
+    "repo/no-class-name-constant": "error",
+    "repo/prefer-shared-utils": "error",
+    "repo/react-fc-props": "error",
+    "repo/throw-error-inline": "error",
+    "repo/zod-coerce-generic": "error",
+    "repo/zod-default-catch": "error",
+    "repo/zod-empty-string-null": "error",
+    "repo/zod-object-naming": "error",
+    "repo/zod-type-name": "error",
+    "max-lines": "off",
+    "max-depth": "off",
+    "max-classes-per-file": "off",
+    "max-lines-per-function": "off",
+    "no-await-in-loop": "off",
+    "require-await": "off",
+    "no-param-reassign": "error",
+    "no-useless-assignment": "error",
+    "no-unreachable-loop": "error",
+    "no-return-assign": "error",
+    "no-multi-assign": "error",
+    "prefer-arrow-callback": "error",
+    "logical-assignment-operators": "error",
+    "no-undef": "error",
+    "use-isnan": [
+      "error",
+      {
+        "enforceForIndexOf": true
+      }
+    ],
+    "valid-typeof": [
+      "error",
+      {
+        "requireStringLiterals": true
+      }
+    ],
+    "default-param-last": "error",
+    "default-case-last": "error",
+    "eqeqeq": [
+      "error",
+      "always",
+      {
+        "null": "ignore"
+      }
+    ],
+    "grouped-accessor-pairs": "error",
+    "new-cap": [
+      "error",
+      {
+        "capIsNew": false
+      }
+    ],
+    "no-implicit-coercion": "error",
+    "no-extra-boolean-cast": [
+      "error",
+      {
+        "enforceForInnerExpressions": true
+      }
+    ],
+    "no-empty": [
+      "error",
+      {
+        "allowEmptyCatch": true
+      }
+    ],
+    "no-multi-str": "error",
+    "no-new-func": "error",
+    "no-proto": "error",
+    "no-regex-spaces": "error",
+    "no-useless-computed-key": "error",
+    "no-var": "error",
+    "no-void": [
+      "error",
+      {
+        "allowAsStatement": true
+      }
+    ],
+    "prefer-const": [
+      "error",
+      {
+        "destructuring": "all"
+      }
+    ],
+    "prefer-object-has-own": "error",
+    "yoda": "error",
+    "curly": "error",
+    "func-style": "error",
+    "arrow-body-style": ["error", "always"],
+    "object-shorthand": ["error", "properties"],
+    "promise/param-names": "error",
+    "promise/no-nesting": "error",
+    "promise/no-return-wrap": "error",
+    "promise/prefer-catch": "error",
+    "promise/no-return-in-finally": "error",
+    "bun/react-prefer-updater-function": "error",
+    "bun/react-no-namespace-hooks": "error",
+    "bun/react-no-local-render-helpers": "error",
+    "bun/react-no-latest-value-ref": "error",
+    "bun/prefer-url-for-sibling-files": "error",
+    "bun/no-redundant-catch-type": "error",
+    "bun/no-negative-repeat-count": "error",
+    "bun/no-literal-temp-dir": "error",
+    "bun/no-cwd-dependent-path": "error",
+    "bun/no-array-just-to-count": "error",
+    "bun/jsx-no-forbidden-nesting": "error",
+    "bun:test/valid-title": [
+      "error",
+      {
+        "ignoreTypeOfTestName": true,
+        "mustMatch": {
+          "it": "^should ",
+          "test": "^should "
+        }
+      }
+    ],
+    "bun:test/no-focused-tests": "error",
+    "bun:test/no-disabled-tests": "error",
+    "bun:test/no-commented-out-tests": "error",
+    "bun:test/no-conditional-tests": "error",
+    "bun:test/consistent-test-it": "error",
+    "bun:test/no-duplicate-hooks": "error",
+    "bun:test/no-identical-title": "error",
+    "jest/valid-title": [
+      "error",
+      {
+        "ignoreTypeOfTestName": true,
+        "mustMatch": {
+          "it": "^should ",
+          "test": "^should "
+        }
+      }
+    ],
+    "jest/no-conditional-in-test": "off",
+    "unicorn/catch-error-name": "error",
+    "unicorn/consistent-date-clone": "error",
+    "unicorn/error-message": "error",
+    "unicorn/no-array-for-each": "error",
+    "unicorn/no-array-method-this-argument": "error",
+    "unicorn/no-document-cookie": "error",
+    "unicorn/no-zero-fractions": "error",
+    "unicorn/number-literal-case": "error",
+    "unicorn/prefer-node-protocol": "error",
+    "unicorn/throw-new-error": "error",
+    "unicorn/require-array-join-separator": "error",
+    "unicorn/prefer-number-properties": "error",
+    "unicorn/prefer-modern-math-apis": "error",
+    "unicorn/prefer-structured-clone": "error",
+    "unicorn/consistent-existence-index-check": "error",
+    "unicorn/prefer-includes": "error",
+    "unicorn/prefer-negative-index": "error",
+    "unicorn/prefer-optional-catch-binding": "error",
+    "unicorn/prefer-object-from-entries": "error",
+    "unicorn/no-abusive-eslint-disable": "error",
+    "unicorn/prefer-keyboard-event-key": "error",
+    "unicorn/prefer-response-static-json": "error",
+    "unicorn/prefer-top-level-await": "off",
+    "unicorn/no-useless-undefined": "off",
+    "jsx-a11y/no-autofocus": "off",
+    "jsx-a11y/prefer-tag-over-role": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/aria-role": [
+      "error",
+      {
+        "ignoreNonDOM": true
+      }
+    ],
+    "jsx-a11y/media-has-caption": "off",
+    "jsx-a11y/no-noninteractive-tabindex": [
+      "error",
+      {
+        "roles": ["tabpanel", "note"]
+      }
+    ],
+    "jsx-a11y/control-has-associated-label": [
+      "error",
+      {
+        "depth": 3
+      }
+    ],
+    "react/jsx-no-leaked-render": "error",
+    "react/unsupported-syntax": "error",
+    "react/rule-suppression": "error",
+    "react/syntax": "error",
+    "react/todo": "error",
+    "react/invariant": "error",
+    "react/no-array-index-key": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/iframe-missing-sandbox": "off",
+    "react/self-closing-comp": "error",
+    "react/jsx-boolean-value": "error",
+    "react/button-has-type": "error",
+    "react/no-unknown-property": "error",
+    "react/no-deprecated": "error",
+    "react/forbid-dom-props": [
+      "error",
+      {
+        "forbid": [
+          {
+            "propName": "data-testid",
+            "message": "Query by role and accessible name, not test IDs."
+          },
+          {
+            "propName": "rel",
+            "message": "`target=\"_blank\"` implies `noopener` in every supported browser, and the default referrer policy already limits the `Referer` header to the origin."
+          }
+        ]
+      }
+    ],
+    "react/forbid-component-props": [
+      "error",
+      {
+        "forbid": [
+          {
+            "propName": "data-testid",
+            "message": "Query by role and accessible name, not test IDs."
+          },
+          {
+            "propName": "rel",
+            "message": "`target=\"_blank\"` implies `noopener` in every supported browser, and the default referrer policy already limits the `Referer` header to the origin."
+          }
+        ]
+      }
+    ],
+    "react/jsx-no-target-blank": "off",
+    "react/jsx-no-useless-fragment": "off",
+    "react/no-unstable-nested-components": "off",
+    "import/no-webpack-loader-syntax": "error",
+    "import/export": "error",
+    "import/no-duplicates": "error",
+    "import/no-named-default": "error",
+    "import/no-anonymous-default-export": "error",
+    "import/consistent-type-specifier-style": "error",
+    "import/no-extraneous-dependencies": "error",
+    "import/no-relative-packages": "error",
+    "import/no-mutable-exports": "error",
+    "import/no-cycle": "error",
+    "import/no-unassigned-import": "off",
+    "import/max-dependencies": "off",
+    "import/no-named-as-default": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "always",
+        "tsx": "always",
+        "js": "never",
+        "jsx": "never"
+      }
+    ],
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "name": "@tanstack/react-form",
+            "importNames": ["useForm", "createFormHook"],
+            "message": "Use `useFormZodI18n` from `apps/web/src/Hook/useFormZodI18n.ts`."
+          }
+        ]
+      }
+    ],
+    "no-restricted-properties": [
+      "error",
+      {
+        "property": "getByTestId",
+        "message": "Query by role and accessible name, not test IDs."
+      },
+      {
+        "property": "getAllByTestId",
+        "message": "Query by role and accessible name, not test IDs."
+      },
+      {
+        "property": "queryByTestId",
+        "message": "Query by role and accessible name, not test IDs."
+      },
+      {
+        "property": "queryAllByTestId",
+        "message": "Query by role and accessible name, not test IDs."
+      },
+      {
+        "property": "findByTestId",
+        "message": "Query by role and accessible name, not test IDs."
+      },
+      {
+        "property": "findAllByTestId",
+        "message": "Query by role and accessible name, not test IDs."
+      }
+    ],
+    "import/no-restricted-paths": [
+      "error",
+      {
+        "zones": [
+          {
+            "target": "./apps/api/src/**/*.test.ts",
+            "from": "./apps/api/src/tools/database/database.ts",
+            "message": "Drive tests through the public API. Add a helper to `apps/api/src/_test/` when no route exists."
+          },
+          {
+            "target": [
+              "./apps/api/src/_test",
+              "./apps/api/src/cron",
+              "./apps/api/src/domain",
+              "./apps/api/src/jobs",
+              "./apps/api/src/scripts",
+              "./apps/api/src/tools"
+            ],
+            "from": "./apps/api/src/routes",
+            "except": ["./router.ts", "./contract.ts", "./health/contract.ts"],
+            "message": "Code outside `routes/` never imports from `routes/`, except the API router and contracts. Move the imported code to `domain/<Entity>/`."
+          },
+          {
+            "target": "./apps/web/src/Design",
+            "from": [
+              "./apps/web/src/DataDisplay",
+              "./apps/web/src/Landing",
+              "./apps/web/src/routes"
+            ],
+            "message": "`Design/` holds UI primitives with no business entity. Move the component that needs this import to `DataDisplay/<Entity>/`."
+          },
+          {
+            "target": [
+              "./apps/web/src/DataDisplay",
+              "./apps/web/src/Landing",
+              "./apps/web/src/Layout",
+              "./apps/web/src/i18n",
+              "./apps/web/src/Hook",
+              "./apps/web/src/Icon",
+              "./apps/web/src/Email"
+            ],
+            "from": "./apps/web/src/routes",
+            "message": "Code outside `routes/` never imports from `routes/`. Move the imported code up next to its consumers."
+          }
+        ]
+      }
+    ],
+    "typescript/ban-types": "off",
+    "typescript/no-unsafe-type-assertion": "off",
+    "typescript/no-confusing-void-expression": "off",
+    "typescript/no-unsafe-assignment": "off",
+    "typescript/no-misused-promises": "off",
+    "typescript/return-await": ["error", "always"],
+    "typescript/require-await": "off",
+    "typescript/prefer-readonly-parameter-types": "off",
+    "typescript/strict-void-return": "off",
+    "typescript/consistent-type-exports": "error",
+    "typescript/no-import-type-side-effects": "error",
+    "typescript/prefer-for-of": "error",
+    "typescript/prefer-string-starts-ends-with": "error",
+    "typescript/no-inferrable-types": "error",
+    "typescript/use-unknown-in-catch-callback-variable": "error",
+    "typescript/no-useless-constructor": "error",
+    "no-unused-vars": [
+      "error",
+      {
+        "args": "all",
+        "argsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_",
+        "destructuredArrayIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "ignoreRestSiblings": true
+      }
+    ],
+    "no-use-before-define": [
+      "error",
+      {
+        "functions": false,
+        "classes": false,
+        "enums": false,
+        "variables": false,
+        "typedefs": false
+      }
+    ],
+    "typescript/only-throw-error": "off",
+    "no-unused-expressions": [
+      "error",
+      {
+        "allowShortCircuit": true,
+        "allowTernary": true,
+        "allowTaggedTemplates": true
+      }
+    ],
+    "typescript/adjacent-overload-signatures": "error",
+    "typescript/consistent-type-definitions": "error",
+    "typescript/consistent-type-imports": "error",
+    "typescript/explicit-member-accessibility": "error",
+    "typescript/explicit-function-return-type": [
+      "error",
+      {
+        "allowExpressions": true
+      }
+    ],
+    "typescript/no-extraneous-class": [
+      "error",
+      {
+        "allowWithDecorator": true
+      }
+    ],
+    "typescript/no-floating-promises": [
+      "error",
+      {
+        "allowForKnownSafeCalls": [
+          {
+            "from": "package",
+            "name": ["test", "it", "suite", "describe"],
+            "package": "bun:test"
+          }
+        ]
+      }
+    ],
+    "typescript/no-non-null-assertion": "error",
+    "typescript/no-require-imports": "error",
+    "typescript/prefer-function-type": "error",
+    "typescript/prefer-find": "error",
+    "typescript/prefer-nullish-coalescing": "off",
+    "typescript/prefer-readonly": "error",
+    "typescript/prefer-reduce-type-parameter": "error",
+    "typescript/prefer-return-this-type": "error",
+    "typescript/promise-function-async": "error",
+    "typescript/restrict-plus-operands": [
+      "error",
+      {
+        "skipCompoundAssignments": true
+      }
+    ],
+    "typescript/no-unnecessary-boolean-literal-compare": [
+      "error",
+      {
+        "allowComparingNullableBooleansToTrue": false,
+        "allowComparingNullableBooleansToFalse": false
+      }
+    ],
+    "typescript/strict-boolean-expressions": [
+      "error",
+      {
+        "allowString": false,
+        "allowNumber": false,
+        "allowNullableObject": false
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["apps/web/src/router.tsx"],
+      "rules": {
+        "typescript/explicit-function-return-type": "off"
+      }
+    },
+    {
+      "files": ["**/*UI.tsx"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "paths": [
+              {
+                "name": "@tanstack/react-form",
+                "importNames": ["useForm", "createFormHook"],
+                "message": "Use `useFormZodI18n` from `apps/web/src/Hook/useFormZodI18n.ts`."
+              },
+              {
+                "name": "@tanstack/react-query",
+                "allowTypeImports": true,
+                "message": "`*UI.tsx` is presentational: it never fetches or mutates, it only receives props. Move this into its container component."
+              },
+              {
+                "name": "@tanstack/react-start",
+                "allowTypeImports": true,
+                "message": "`*UI.tsx` is presentational: it never fetches or mutates, it only receives props. Move this into its container component."
+              },
+              {
+                "name": "@repo/api-client",
+                "allowTypeImports": true,
+                "message": "`*UI.tsx` is presentational: it never fetches or mutates, it only receives props. Move this into its container component."
+              }
+            ],
+            "patterns": [
+              {
+                "regex": "(^|/)configuration\\.ts$",
+                "importNames": ["apiClientQuery"],
+                "message": "`*UI.tsx` is presentational: it never fetches or mutates, it only receives props. Move this into its container component."
+              },
+              {
+                "regex": "(^|/)useAsyncHandler\\.ts$",
+                "message": "`*UI.tsx` is presentational: it never fetches or mutates, it only receives props. Move this into its container component."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["apps/web/src/Hook/useFormZodI18n.ts"],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    },
+    {
+      "files": ["shared/models/src/Entity.ts", "apps/api/src/tools/**"],
+      "rules": {
+        "repo/entity-id-reference": "off"
+      }
+    },
+    {
+      "files": ["shared/models/src/Entity.ts"],
+      "rules": {
+        "repo/zod-default-catch": "off"
+      }
+    },
+    {
+      "files": ["shared/models/**"],
+      "rules": {
+        "repo/zod-object-type": "error"
+      }
+    },
+    {
+      "files": ["apps/api/**"],
+      "rules": {
+        "repo/no-random-uuid": "error"
+      }
+    },
+    {
+      "files": ["**/*.test.ts", "**/*.test.tsx", "**/*.stories.tsx", "apps/api/src/_test/**"],
+      "rules": {
+        "repo/throw-error-inline": "off"
+      }
+    },
+    {
+      "files": ["apps/web/src/routes/**"],
+      "rules": {
+        "repo/area-import-web": "error"
+      }
+    },
+    {
+      "files": ["apps/api/src/routes/**"],
+      "rules": {
+        "repo/area-import-api": "error"
+      }
+    },
+    {
+      "files": ["shared/utils/**", "apps/api/src/tools/database/migrations/**"],
+      "rules": {
+        "repo/prefer-shared-utils": "off"
+      }
+    }
+  ]
+}

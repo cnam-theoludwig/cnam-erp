@@ -7,6 +7,8 @@ Projet réalisé dans le cadre de la formation [Ingénieur en Informatique et Sy
 ## Documentation
 
 - [Sujet](./docs/sujet.md)
+- [Développement](./docs/development.md)
+- [Production](./docs/production.md)
 - [Brainstorming - Google Docs](https://docs.google.com/document/d/1q4h2gT4KR448x2PMe9KPmKeXcf298g7UZshWUDkhhK0/edit?tab=t.0)
 
 ## Membres du groupe

@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "description": "{name}, the ERP to manage student associations."
+  },
+  "loading": "Loading...",
+  "actions": {
+    "back": "Back",
+    "signIn": "Sign in",
+    "signOut": "Sign out"
+  },
+  "errors": {
+    "invalid": "Check this field.",
+    "minLength": "{fieldName} must be at least {minimum, number} characters.",
+    "maxLength": "{fieldName} must be {maximum, number} characters or fewer.",
+    "required": "{fieldName} is required.",
+    "email": "Invalid email.",
+    "pageNotFound": "Page not found",
+    "pageDoesntExist": "This page does not exist!",
+    "returnToHomePage": "Return to home page",
+    "serverError": "Server error",
+    "tryAgain": "Try again",
+    "requestError": "An error occurred, please try again later."
+  },
+  "i18n": {
+    "language": "Language"
+  },
+  "Duration": {
+    "millisecond": "{amount, plural, one {# millisecond} other {# milliseconds}}",
+    "second": "{amount, plural, one {# second} other {# seconds}}",
+    "minute": "{amount, plural, one {# minute} other {# minutes}}",
+    "hour": "{amount, plural, one {# hour} other {# hours}}",
+    "day": "{amount, plural, one {# day} other {# days}}",
+    "week": "{amount, plural, one {# week} other {# weeks}}",
+    "month": "{amount, plural, one {# month} other {# months}}",
+    "year": "{amount, plural, one {# year} other {# years}}"
+  },
+  "User": {
+    "greeting": "Hello, {displayName}",
+    "email": {
+      "label": "Email",
+      "placeholder": "Your email address"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Password",
+      "show": "Show password",
+      "hide": "Hide password"
+    },
+    "signIn": {
+      "forgotPassword": "Forgot password?",
+      "submit": "Sign in",
+      "errorInvalidCredentials": "Invalid email or password."
+    },
+    "passwordForgot": {
+      "title": "Forgot password?",
+      "subtitle": "Enter your email to receive a reset link.",
+      "submit": "Send reset link",
+      "success": "If an account exists for this email, a reset link has been sent.",
+      "backToSignIn": "Back to sign in"
+    },
+    "passwordReset": {
+      "title": "Reset your password",
+      "subtitle": "Choose a new password.",
+      "submit": "Reset password",
+      "success": "Password reset. You can now sign in."
+    }
+  },
+  "emails": {
+    "AuthEmailVerify": {
+      "title": "Verify your email address",
+      "description": "You have requested to update your email address to <email></email>. Please click the button below to confirm this change.",
+      "button": "Verify Email",
+      "expiration": "For security reasons, this link is only available until {date, date, medium} at {date, time, short}. After this time, you will have to make a new request.",
+      "fallback": "If the button above does not work, you can copy and paste this URL into your browser:"
+    },
+    "AuthPasswordReset": {
+      "subject": "Reset your password",
+      "title": "Password reset request",
+      "description": "Hello <name></name>, click the button below to choose a new password.",
+      "button": "Reset my password",
+      "fallback": "If the button above does not work, you can copy and paste this URL into your browser:",
+      "expiration": "This reset link is valid for {duration}.",
+      "footer": "If you received this message by mistake, please delete it. Your password will not be reset if you do not click on the link above."
+    },
+    "AuthEmailUpdateWarning": {
+      "title": "Security Alert: Email Change",
+      "description": "The email address for your account is being changed from <emailOld></emailOld> to <emailPending></emailPending>.",
+      "warning": "If you did not request this change, please secure your account immediately.",
+      "button": "Go to my account"
+    }
+  }
+}

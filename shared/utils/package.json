@@ -1,0 +1,19 @@
+{
+  "name": "@repo/utils",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./array": "./src/array.ts",
+    "./configuration": "./src/configuration.ts",
+    "./crypto": "./src/crypto.ts",
+    "./date": "./src/date.ts",
+    "./function": "./src/function.ts",
+    "./math": "./src/math.ts",
+    "./object": "./src/object.ts",
+    "./string": "./src/string.ts",
+    "./type": "./src/type.d.ts"
+  },
+  "scripts": {
+    "test": "bun test --env-file=../../.env"
+  }
+}

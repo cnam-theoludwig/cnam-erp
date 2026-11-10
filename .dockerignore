@@ -1,0 +1,42 @@
+**/.git
+**/.turbo
+**/.tanstack
+**/.nitro
+**/.output
+**/out
+**/dist
+**/build
+**/coverage
+**/node_modules
+**/docs
+
+# envs
+**/.env
+**/.env.example
+**/.env.production
+**/.env.development
+**/secrets
+
+# IDEs and editors
+.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.vscode
+
+# misc
+.DS_Store
+*.pem
+*.bak
+Dockerfile
+README.md
+dump_*
+pg-dumps/
+backup/
+*.pgsql
+
+# typescript
+*.tsbuildinfo

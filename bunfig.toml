@@ -1,0 +1,14 @@
+telemetry = false
+
+[run]
+bun = true
+silent = true
+
+[test]
+onlyFailures = true
+
+[install]
+minimumReleaseAge = "24 hours"
+
+# Use "hoisted" for node-modules-inspector
+# linker = "hoisted"

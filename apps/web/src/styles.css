@@ -1,0 +1,58 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@import "@fontsource/inter/400";
+@import "@fontsource/inter/500";
+@import "@fontsource/inter/600";
+@import "@fontsource/inter/700";
+@import "@fontsource/inter/800";
+
+@theme {
+  --color-*: initial;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-gray: #d4d4d4;
+
+  --color-primary: #c1002a;
+  --color-primary-strong: #8f001f;
+
+  --color-state-info: #2f80ed;
+  --color-state-success: #15803d;
+  --color-state-warning: #e2b93b;
+  --color-state-warning-strong: #4a3b0d;
+  --color-state-error: #d63031;
+
+  --color-content-primary: #020617;
+  --color-content-body: #374151;
+  --color-content-secondary: #656d7a;
+
+  --color-background: #f9fafb;
+  --color-background-gray: #f3f4f6;
+  --color-background-tint: #fdf2f4;
+  --color-background-dark: #0f172a;
+
+  --color-border-subtle: #f3f4f6;
+
+  --color-border-primary: #c1002a;
+
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+  html,
+  body {
+    @apply h-full bg-background font-sans text-content-body antialiased;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@keyframes ripple {
+  to {
+    opacity: 0;
+    transform: scale(2);
+  }
+}

@@ -1,0 +1,68 @@
+services:
+  cnam-erp-dev-database:
+    container_name: "cnam-erp-dev-database"
+    image: "docker.io/postgres:18.6@sha256:06cad38a5d9f5d24b4d83d86def30795d5e4b757fedbf5281172b576dedcd941"
+    restart: "unless-stopped"
+    environment:
+      TZ: ${TZ-Europe/Paris}
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
+    ports:
+      - "${DATABASE_PORT-5434}:5432"
+    volumes:
+      - "cnam-erp-dev-postgres-data:/var/lib/postgresql"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DATABASE_USER} -d ${DATABASE_NAME}"]
+      interval: "10s"
+      timeout: "5s"
+      retries: 5
+      start_period: "30s"
+
+  cnam-erp-dev-redis:
+    container_name: "cnam-erp-dev-redis"
+    image: "docker.io/redis:8.10.2@sha256:d5ac52db24d4e70566fe9944f22cf5bdc2bc739b05c0f426335161ea6c23f3b3"
+    restart: "unless-stopped"
+    environment:
+      TZ: ${TZ-Europe/Paris}
+      REDIS_PASSWORD: ${REDIS_PASSWORD}
+    command: "redis-server --requirepass ${REDIS_PASSWORD} --appendonly yes"
+    ports:
+      - "${REDIS_PORT-6380}:6379"
+    volumes:
+      - "cnam-erp-dev-redis-data:/data"
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD}", "--no-auth-warning", "ping"]
+      interval: "10s"
+      timeout: "5s"
+      retries: 5
+      start_period: "2s"
+
+  cnam-erp-dev-mailpit:
+    container_name: "cnam-erp-dev-mailpit"
+    image: "docker.io/axllent/mailpit:v1.31.2@sha256:74d609a42ec279aa63c6b4622a6fa9b5408d1ad5b1d76a1c4be40a265ce0863d"
+    restart: "unless-stopped"
+    environment:
+      TZ: ${TZ-Europe/Paris}
+    ports:
+      - "${MAILPIT_SMTP_PORT-1026}:1025"
+      - "${MAILPIT_WEB_PORT-8026}:8025"
+
+  cnam-erp-dev-adminer:
+    container_name: "cnam-erp-dev-adminer"
+    image: "docker.io/adminneoorg/adminneo:5.8.0@sha256:0aca89527d7847144645fe502f041ab00e57a04b0ab4682f6143e1943533b851"
+    restart: "unless-stopped"
+    environment:
+      TZ: ${TZ-Europe/Paris}
+      NEO_COLOR_VARIANT: "${ADMINER_COLOR-blue}"
+      NEO_NAVIGATION_MODE: "dual"
+      NEO_PREFER_SELECTION: "true"
+      NEO_DEFAULT_DRIVER: "pgsql"
+      NEO_DEFAULT_SERVER: "cnam-erp-dev-database"
+      NEO_DEFAULT_DATABASE: ${DATABASE_NAME}
+    ports:
+      - "${ADMINER_PORT-4081}:8080"
+
+volumes:
+  cnam-erp-dev-postgres-data:
+  cnam-erp-dev-redis-data:

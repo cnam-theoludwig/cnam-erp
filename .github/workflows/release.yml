@@ -1,0 +1,39 @@
+name: "release"
+
+on:
+  push:
+    branches: ["release/*"]
+
+env:
+  REGISTRY: "ghcr.io"
+
+jobs:
+  ci:
+    uses: "./.github/workflows/ci.yml"
+
+  build-push:
+    needs: "ci"
+    timeout-minutes: 45
+    runs-on: "ubuntu-latest"
+    permissions:
+      contents: "read"
+      packages: "write"
+    strategy:
+      matrix:
+        application: ["web", "api"]
+    steps:
+      - uses: "actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1" # v7.0.1
+
+      - name: "Login to the registry"
+        env:
+          REGISTRY_USERNAME: ${{ github.actor }}
+          REGISTRY_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: 'echo "$REGISTRY_TOKEN" | docker login "$REGISTRY" --username "$REGISTRY_USERNAME" --password-stdin'
+
+      - name: "Build and push Docker image"
+        shell: "bash"
+        run: |
+          IMAGE_NAMESPACE="${REGISTRY}/${GITHUB_REPOSITORY_OWNER,,}"
+          IMAGE="${IMAGE_NAMESPACE}/cnam-erp-${{ matrix.application }}:sha-$(git rev-parse HEAD)"
+          docker build --file "apps/${{ matrix.application }}/Dockerfile" --tag "$IMAGE" ./
+          docker push "$IMAGE"

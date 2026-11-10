@@ -1,0 +1,9 @@
+{
+  "$schema": "https://unpkg.com/oxfmt@0.72.0/configuration_schema.json",
+  "ignorePatterns": ["bun.lock", "**/routeTree.gen.ts"],
+  "semi": false,
+  "sortTailwindcss": {
+    "stylesheet": "./apps/web/src/styles.css",
+    "functions": ["classNames"]
+  }
+}
